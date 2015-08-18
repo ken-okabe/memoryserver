@@ -21,7 +21,7 @@
     // more
   };
 
-  var memoryserver = function memoryserver(dir, port, upCb, request) {
+  var memoryserver = function memoryserver(dir, port, upCb) {
 
     //--------------------------------------------------------
     var wwwLoad = function wwwLoad(publicDir, cbF) {

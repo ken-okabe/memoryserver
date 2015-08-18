@@ -19,7 +19,7 @@
   // more
   };
 
-  var memoryserver = (dir, port, upCb, request) => {
+  var memoryserver = (dir, port, upCb) => {
 
 
     //--------------------------------------------------------
