@@ -1,0 +1,26 @@
+{
+  "name": "memoryserver",
+  "version": "1.0.0",
+  "description": "http server with conntes load on memory",
+  "main": "memoryserver.js",
+  "scripts": {
+    "test": "babel memoryserver.jsx -o memoryserver.js; babel-node test.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenokabe/memoryserver.git"
+  },
+  "keywords": [
+    "http",
+    "web",
+    "server",
+    "memory",
+    "cash"
+  ],
+  "author": "Ken Okabe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenokabe/memoryserver/issues"
+  },
+  "homepage": "https://github.com/kenokabe/memoryserver#readme"
+}
