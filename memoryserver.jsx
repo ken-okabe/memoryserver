@@ -65,11 +65,9 @@
     };
     //---------------------------------------------------------
 
-    console.log(__dirname);
-    var wwwpath = path.join(__dirname, dir);
 
     //start here
-    wwwLoad(wwwpath,
+    wwwLoad(dir,
       (publicObj) => {
         var request = (req, res) => {
 
