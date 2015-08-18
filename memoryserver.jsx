@@ -55,6 +55,7 @@
       console.log('seekDir(publicDir);');
       seekDir(publicDir);
 
+
       var f = () => {
         cbF(publicObj);
       };
@@ -67,7 +68,7 @@
 
 
     //start here
-    wwwLoad(dir,
+    return wwwLoad(dir,
       (publicObj) => {
         var request = (req, res) => {
 
@@ -100,9 +101,13 @@
         };
 
         console.log('server starting');
-        var server = http.createServer(request).listen(port, upCb);
+        var server = http.createServer(request);
 
-        return server;
+        server.listen(port, () => {
+          upCb(server);
+        });
+
+        return true;
 
       });
 

@@ -6,6 +6,9 @@
   "scripts": {
     "test": "babel memoryserver.jsx -o memoryserver.js; babel-node test.jsx"
   },
+  "devDependencies": {
+    "socket.io": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kenokabe/memoryserver.git"

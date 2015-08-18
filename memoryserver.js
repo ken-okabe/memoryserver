@@ -67,7 +67,7 @@
     //---------------------------------------------------------
 
     //start here
-    wwwLoad(dir, function (publicObj) {
+    return wwwLoad(dir, function (publicObj) {
       var request = function request(req, res) {
 
         var writeOut = function writeOut(contentKey) {
@@ -99,9 +99,13 @@
       };
 
       console.log('server starting');
-      var server = http.createServer(request).listen(port, upCb);
+      var server = http.createServer(request);
 
-      return server;
+      server.listen(port, function () {
+        upCb(server);
+      });
+
+      return true;
     });
   };
 

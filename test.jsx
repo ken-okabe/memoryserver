@@ -3,12 +3,17 @@
   var port = 28888;
   var directory = 'test-www';
 
-  var server = require('./memoryserver.js');
+  var memoryserver = require('./memoryserver.js');
+  var cb = (server) => {
+    console.log('server is up ' + port);
 
-  var cb = () => {
-    console.log('server is up');
+    var io = require('socket.io')(server);
+    io.on('connection', (socket) => {
+      console.log('socket.io client connected!');
+    });
+
   };
 
-  var myServer = server(directory, port, cb);
+  memoryserver(directory, port, cb);
 
 })();
