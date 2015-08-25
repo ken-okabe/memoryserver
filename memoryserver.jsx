@@ -19,7 +19,7 @@
   // more
   };
 
-  var memoryserver = (PublicDir, port) => {
+  var memoryserver = (PublicDir) => {
 
     console.log("==== seek Dir ===");
 
@@ -49,7 +49,16 @@
       });
     };
 
-    var request = (req, res) => {
+    console.log('seekDir(PublicDir);');
+    seekDir(PublicDir);
+
+    console.log('server starting');
+    var server = http.createServer();
+
+    server.mimeTypes = mimeTypes;
+    server.publicObj = publicObj;
+
+    server.request = (req, res) => {
       var writeOut = (contentKey) => {
         res.writeHead(200, {
           'Content-Type': mimeTypes[path.extname(contentKey).split(".")[1]]
@@ -75,25 +84,8 @@
         writeOut(uri);
       }
 
-      return;
+      return server;
     };
-
-    console.log('seekDir(PublicDir);');
-    seekDir(PublicDir);
-
-    console.log('server starting');
-    var server = http.createServer(request);
-
-    server.up = () => {
-    };
-
-    var f = () => {
-      server.listen(port, () => {
-        server.up();
-      });
-    };
-    setTimeout(f, 1000);
-
 
     return server;
   };
