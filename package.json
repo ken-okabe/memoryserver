@@ -1,6 +1,6 @@
 {
   "name": "memoryserver",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "http server with conntes load on memory",
   "main": "memoryserver.js",
   "scripts": {

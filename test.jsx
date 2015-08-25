@@ -12,7 +12,7 @@
     var path = require("path");
     var fs = require('fs');
 
-  //custom requiest
+  //custom request
     server
       .request = (req, res) => {
       var writeOut = (contentKey) => {
