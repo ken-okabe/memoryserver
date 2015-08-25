@@ -5,7 +5,7 @@
 
   var memoryserver = require('./memoryserver.js');
 
-  var server = memoryserver(directory, port);
+  var server = memoryserver(directory);
 
   /*
     var url = require('url');
@@ -43,7 +43,8 @@
     };
   */
 
-  server.on('request', server.request)
+  server
+    .on('request', server.request)
     .listen(port, () => {
       console.log('server is up!!!!! ' + port);
     }) ;
